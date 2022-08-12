@@ -5,5 +5,5 @@ db.sqlite3
 .local
 mysite/media/files/*
 mysite/media/photos/*
-static/
+mysite/static/
 venv/

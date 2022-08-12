@@ -1,0 +1,251 @@
+:root {
+    --storage__category--bg: #333336;
+    --storage__category--border: #aaaaaa;
+    --storage__category-color: #ffff;
+    --storage__category-button-bg: #444446;
+    --storage__category-button-border: #fff;
+    --storage__category-title: #fff;
+    --storage__category-content-color: #aaaaaa;
+
+    --storage__card__category-color: #fff;
+    --storage__card__category-border: #aaaaaa;
+    --storage__card-color: #333336;
+    --storage__card-border: #aaaaaa;
+    --storage__card-title: #fff;
+    --storage__card-button-bg: #444446;
+    --storage__card-button-border: #fff;
+    --storage__card-text-color: #aaaaaa;
+    --storage__card_button-color: #fff;
+
+    --storage__card__view: #333336;
+    --storage__card__view-border: #aaaaaa;
+    --file__content-color: #fff;
+    --file__content-bg: #444446;
+    --file__content-border: #aaaaaa;
+    --storage__incard__content: #aaaaaa;
+    --storage__incard__footer: #aaaaaa;
+    --storage__incard__button-bg: #fff;
+    --storage__incard__button-color: #444446;
+    --storage__incard__button-border: #aaaaaa;
+}
+:root[data-theme="light"] {
+    --storage__category--bg: #5181b8;
+    --storage__category--border: #332bd9;
+    --storage__category-color: #332bd9;
+    --storage__category-button-bg: #fff;
+    --storage__category-button-border: #332bd9;
+    --storage__category-title: #fff;
+    --storage__category-content-color: #fff;
+
+    --storage__card__category-color: #332bd9;
+    --storage__card__category-border: #332bd9;
+    --storage__card-color: #5181b8;
+    --storage__card-border: #332bd9;
+    --storage__card-title: #fff;
+    --storage__card-button-bg: #fff;
+    --storage__card-button-border: #332bd9;
+    --storage__card-text-color: #fff;
+    --storage__card_button-color: #332bd9;
+
+    --storage__card__view: #5181b8;
+    --storage__card__view-border: #332bd9;
+    --file__content-color: #000;
+    --file__content-bg: #d7e4f3;
+    --file__content-border: #332bd9;
+    --storage__incard__content: #fff;
+    --storage__incard__footer: #fff;
+    --storage__incard__button-bg: #fff;
+    --storage__incard__button-color: #332bd9;
+    --storage__incard__button-border: #332bd9;
+}
+
+
+/* categories */
+
+.storage__categories {
+    display: flex;
+}
+.storage__category {
+    text-align: center;
+    display: inline-block;
+    background-color: var(--storage__category--bg);
+    border: 1px solid var(--storage__category--border);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto;
+    width: 300px;
+    min-height: 300px;
+    position: relative;
+}
+.storage__category a {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: var(--storage__category-color);
+    background-color: var(--storage__category-button-bg);
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: .75;
+    border: 1px solid var(--storage__category-button-border);
+    width: 50%;
+}
+.storage__category a:hover {
+    color: var(--storage__category-color);
+    opacity: 1;
+}
+.storage__category h5 {
+    color: var(--storage__category-title);
+    font-size: 25px;
+}
+.storage__category p {
+    color: var(--storage__category-content-color);
+}
+
+
+/* cards */
+.storage__card__category {
+    text-align: center;
+    color: var(--storage__card__category-color);
+    font-size: 30px;
+    border-top: 1px solid var(--storage__card__category-border);
+    border-radius: 15px;
+}
+.storage__card__category h5 {
+    padding-top: 15px;
+    margin: 0px;
+}
+
+
+.storage__card__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--storage__card__category-border);
+    border-radius: 15px;
+    min-height: calc(100vh - 140px);
+}
+.storage__card {
+    text-align: center;
+    display: inline-block;
+    background-color: var(--storage__card-color);
+    border: 1px solid var(--storage__card-border);
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    height: 300px;
+    position: relative;
+    margin: 10px;
+    margin-left: 30px;
+}
+
+.storage__card a {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: var(--storage__card_button-color);
+    background-color: var(--storage__card-button-bg);
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: .75;
+    border: 1px solid var(--storage__card-button-border);
+    width: 50%;
+}
+
+.storage__card a:hover {
+    color: var(--storage__card_button-color);
+    opacity: 1;
+}
+.storage__card h5 {
+    color: var(--storage__card-title);
+    font-size: 20px;
+}
+.storage__card p {
+    color: var(--storage__card-text-color);
+}
+
+
+
+
+/* card view */
+.storage__card__view {
+    background-color: var(--storage__card__view);
+    border: 1px solid var( --storage__card__view-border);
+    border-radius: 15px;
+    padding: 10px 10px 0px 10px;
+}
+.card__container {
+    display: flex;
+}
+.card__title h5 {
+    color: var(--storage__card-title);
+    text-align: center;
+    font-size: 35px;
+    margin: 5px;
+}
+
+.file_content {
+    display: inline-block;
+    color: var(--file__content-color);
+    background-color: var(--file__content-bg);
+    border-radius: 15px;
+    padding: 10px;
+    border: 2px solid var(--file__content-border);
+    margin-left: 20px;
+    width: 40%;
+    min-height: calc(100vh - 220px);
+}
+
+.storage__incard__content {
+    position: relative;
+    display: inline-block;
+    color: var(--storage__incard__content);
+    width: 60%;
+    padding-left: 30px;
+}
+
+.card__footer {
+    color: var(--storage__incard__footer);
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 0px 20px;
+}
+
+
+.storage__incard__content button {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: var(--storage__incard__button-color);
+    background-color: var(--storage__incard__button-bg);
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: .75;
+    border: 2px solid var(--storage__incard__button-border);
+}
+
+.storage__incard__content button:hover {
+    color: var(--storage__incard__button-color);
+    opacity: 1;
+}
