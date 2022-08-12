@@ -1,18 +1,44 @@
+/* theme */
+:root {
+    --form-bg: #333336;
+    --form-title: #fff;
+    --form__lable-color: #aaaaaa;
+
+    --form__button-bg: #444446;
+    --form__button-color: #fff;
+    --form__button-border: #aaaaaa;
+
+    --alert-color: #000;
+    --alert-bg: #fff;
+}
+:root[data-theme="light"] {
+    --form-bg: #5181b8;
+    --form-title: #fff;
+    --form__lable-color: #fff;
+
+    --form__button-bg: #fff;
+    --form__button-color: #332bd9;
+    --form__button-border: #332bd9;
+
+    --alert-color: #fff;
+    --alert-bg: #332bd9;
+}
+/* form */
 .form {
     margin: 0 auto;
     padding: 10px;
     width: 50%;
-    background-color: #333336;
+    background-color: var(--form-bg);
     border-radius: 15px;
     position: relative;
   }
 
 .form h1 {
-    color: #fff;
+    color: var(--form-title);
     text-align: center;
 }
 .form label {
-    color: #aaaaaa;
+    color: var(--form__lable-color);
 }
 .form-control {
     border-radius: 15px;
@@ -30,18 +56,18 @@
     transform: translateX(-50%);
 
 
-    background-color: #444446;
+    background-color: var(--form__button-bg);
     font-family: Helvetica;
     font-weight: 500;
     border-radius: 15px;
     padding: 10px;
-    color: #fff;
+    color: var(--form__button-color);
     opacity: .75;
     font-weight: 600;
-    border: 2px solid #aaaaaa;
+    border: 2px solid var(--form__button-border);
 }
 .form__button:hover {
-    color: #aaaaaa;
+    color: var(--form__button-color);
     opacity: 1;
 }
 
@@ -59,8 +85,8 @@ form {
 }
 
 .alert {
-    color: #000;
-    background-color: #fff;
+    color: var(--alert-color);
+    background-color: var(--alert-bg);
     width: 80%;
     margin: 0 auto;
     margin-bottom: 10px;
