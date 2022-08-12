@@ -1,0 +1,9 @@
+<div class="categories_list_title">
+<h1>Категории</h1>
+<div class="categories__list">
+  <ul id="category_navbar">
+  {% for item in categories %}
+    <li><a href="{{ item.get_absolute_url }}" class="categories__list__item">{{ item.title }}</a></li>
+  {% endfor %}
+</div>
+</div>

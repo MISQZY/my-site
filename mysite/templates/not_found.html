@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Ошибка{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Ошибочка....</h1>
+    <p>К сожалению мы не смогли открыть данную страницу :( </p>
+    <a href= "{% url 'home' %}">Верните меня на главную</a>
+</div>
+{% endblock %}

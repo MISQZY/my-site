@@ -1,0 +1,22 @@
+{% extends 'base_storage.html' %}
+{% comment %} {% load storage_tags %} {% endcomment %}
+
+{% block body %}
+{% comment %} {% show_list_cards %} {% endcomment %}
+<div class = "storage__cards">
+  <div class = "storage__card__category">
+    <h5> Список работ по предмету: {{ category.title }}</h5>
+  </div>
+  <div class = "storage__card__content">
+    {% for item in cards %}
+      <div class="storage__card">
+        <h5>{{ item.title }}</h5>
+        <p>{{ item.content|safe|linebreaks|truncatewords:20 }}</p>
+        <a href="{{ item.get_absolute_url }}">Перейти</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

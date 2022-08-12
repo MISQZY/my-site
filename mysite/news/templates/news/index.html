@@ -1,0 +1,43 @@
+{% extends 'base_news.html' %}
+
+
+{% block content %}
+  {% for item in news %}
+  <div class="news__card">
+    <h5>{{ item.title }}</h5>
+    {% comment %} <div class="news__card__header">
+      <a href="{{ item.category.get_absolute_url }}">{{ item.category }} </a>
+    </div> {% endcomment %}
+        {% if item.photo %}
+          <img class="photo" src="{{ item.photo.url }}" alt = "">
+        {% endif %}
+        <p>{{ item.content|safe|linebreaks|truncatewords:50 }}</p>
+        <div class = "news_card__button" >
+          <a href = "{{ item.get_absolute_url }}" class = "">Подробнее</a>
+        </div>
+        <div class="news__card__footer">
+          {{ item.created_at|date:"H:i d.m.Y" }}
+        </div>
+  </div>
+    {% comment %} <div class="card">
+      <div class="card-header">
+        <a href = "{{ item.category.get_absolute_url }}">{{ item.category }} </a>
+      </div>
+      <div class="card-body">
+        <div class="media " style = "float: left; margin-right: 10px;">
+          {% if item.photo %}
+            <img src="{{ item.photo.url }}" alt = "", width= "400", height = "400", class="mr-4">
+          {% endif %}
+        </div>
+          <div class="media-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.content|safe|linebreaks|truncatewords:50 }}</p>
+            <a href = "{{ item.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+          </div>
+      </div>
+      <div class="card-footer text-muted">
+        {{ item.created_at|date:"Y-m-d H:i" }}
+      </div>
+    </div> {% endcomment %}
+  {% endfor %}
+{% endblock %}

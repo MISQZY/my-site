@@ -1,0 +1,19 @@
+<div class= "bots__list__title">
+    <h1>Активность Ботов</h1>
+    <div class = "bots__list">
+    <ul id="bots__navbar">
+        {% for item in bots %}
+            <li class="bots__list__item">
+                <a href = "https://t.me/{{ item.tg_name }}">{{ item.title }}</a>
+                <span>
+                    {% if item.status %}
+                    ✔
+                    {% else %}
+                    ❌
+                    {% endif %}
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+</div>
