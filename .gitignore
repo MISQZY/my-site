@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 db.sqlite3
 .local
-media/files/*
-media/photos/*
+mysite/media/files/*
+mysite/media/photos/*
 static/
 venv/
