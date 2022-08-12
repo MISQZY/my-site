@@ -1,0 +1,9 @@
+Pipfile
+__pycache__/
+*.pyc
+db.sqlite3
+.local
+media/files/*
+media/photos/*
+static/
+venv/
