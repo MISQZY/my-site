@@ -44,8 +44,8 @@ class ViewNews(DetailView):
 
 
 
-def handle_not_found(request, exception):
-    return render(request, 'templates/not_found.html', status = 404)
+def error404(request, exception):
+    return render(request, '../templates/error_404.html', status = 404)
 
 # def index(request):
 #     news = News.objects.all()

@@ -11,7 +11,7 @@ urlpatterns = [
     path('user/', include('user.urls'))
 ]
 
-handler404="news.views.handle_not_found"
+handler404="news.views.error404"
 
 if settings.DEBUG:
     urlpatterns = [path('__debug__/', include('debug_toolbar.urls')),] + urlpatterns

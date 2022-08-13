@@ -11,7 +11,7 @@ def register(request):
             user = form.save()
             login(request, user)
             messages.success(request, 'Вы были успешно зарегистрированны')
-            return redirect('home')
+            return redirect('home', permanent=True)
         else:
             messages.error(request, 'Ошибка регистрации')
     else:
@@ -25,7 +25,7 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home')
+            return redirect('home', permanent=True)
     else:
         form = UserLoginForm()
 
@@ -33,4 +33,4 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('login', permanent=True)
