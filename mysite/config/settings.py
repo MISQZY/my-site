@@ -128,3 +128,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_URL = '/user/login/'
+
+
+ACESS_LEVELS = {
+    (4, 'Владелец'),
+    (3, 'Админ'),
+    (2, 'Приватный'),
+    (1, 'Базовый'),
+}

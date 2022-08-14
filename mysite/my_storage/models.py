@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.conf import settings
 
 class Storage(models.Model):
     title = models.CharField(max_length=150, verbose_name='Название')
@@ -10,8 +11,11 @@ class Storage(models.Model):
     file = models.FileField(upload_to='files',blank=False, verbose_name='Файл')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Категория')
     is_published = models.BooleanField(default=False, verbose_name='Опубликовано')
-    acess_required = models.IntegerField(default=1,
+    acess_required = models.PositiveSmallIntegerField(
+        default=1,
         verbose_name="Уровень Доступа",
+        choices=settings.ACESS_LEVELS,
+        blank=False,
         validators=[
             MaxValueValidator(4),
             MinValueValidator(1)

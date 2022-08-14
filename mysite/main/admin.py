@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+admin.site.site_header = 'Админ-панель OnlyGuns'
+admin.site.index_title = 'Управление сайтом'
+admin.site.site_title = 'Админ-панель'
