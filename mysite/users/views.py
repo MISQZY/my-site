@@ -34,3 +34,7 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login', permanent=True)
+
+
+def user_profile(request):
+    return render(request, 'users/profile.html', {'user': request.user})

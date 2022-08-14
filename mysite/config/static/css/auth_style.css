@@ -10,6 +10,11 @@
 
     --alert-color: #000;
     --alert-bg: #fff;
+
+    --profile-card-color: #444446;
+    --profile-card-border: #aaaaaa;
+    --profile-card-title: #fff;
+    --profile-card-content-color: #aaaaaa;
 }
 :root[data-theme="light"] {
     --form-bg: #5181b8;
@@ -22,7 +27,82 @@
 
     --alert-color: #fff;
     --alert-bg: #332bd9;
+
+    --profile-card-color: #5181b8;
+    --profile-card-border: #332bd9;
+    --profile-card-title: #fff;
+    --profile-card-content-color: #fff;
 }
+
+/* profile */
+.profile-card {
+    height: calc(100vh - 90px);
+    width: 100%;
+    background-color: var(--profile-card-color);
+    border-radius: 25px;
+    border-top: 5px solid var(--profile-card-border);
+    border-bottom: 5px solid var(--profile-card-border);
+    padding: 15px;
+}
+
+.profile-card h1 {
+    text-align: center;
+    color: var(--profile-card-title);
+    font-family: Helvetica;
+}
+
+.profile-content {
+    display: flex;
+}
+
+#leftside {
+    color: var(--profile-card-content-color);
+    min-width: 400px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 25px;
+    border-top: 5px solid var(--profile-card-border);
+    border-bottom: 5px solid var(--profile-card-border);
+    min-height: 400px;
+    margin-left: 5%;
+}
+
+#leftside img {
+    height: auto;
+    width: 70%;
+    margin-bottom: 15px;
+    border-radius: 30px;
+}
+
+#rightside {
+    position: relative;
+    width: 70%;
+    margin-left: 5px;
+    padding: 10px;
+    height: auto;
+    padding-left: 15px;
+    padding-top: 60px;
+    color: var(--profile-card-content-color);
+    font-size: 20px;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+#rightside a {
+    background-color: var(--form__button-bg);
+    padding: 10px;
+    color: var(--form__button-color);
+    border: solid 2px var(--form__button-border);
+    border-radius: 15px;
+    text-decoration: none;
+    position: absolute;
+    font-family: Helvetica;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
 /* form */
 .form {
     margin: 0 auto;

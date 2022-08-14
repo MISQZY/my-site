@@ -15,6 +15,7 @@ class CustomUser(AbstractUser):
             MinValueValidator(1)
         ]
         )
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Фото', blank=True)
 
     def __str__(self):
         return self.username

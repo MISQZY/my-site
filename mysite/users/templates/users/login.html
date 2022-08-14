@@ -5,13 +5,7 @@
 {{ block.super }}: Авторизация
 {% endblock %}
 
-{% block css_links %}
-<link href="{% static 'css/auth_style.css' %}" rel="stylesheet">
-{% endblock %}
-
-
 {% block body %}
-
 {% block alert %}
 {% if messages %}
 {% for message in messages %}

@@ -1,0 +1,30 @@
+{% extends 'base_user.html' %}
+
+
+{% block title %}
+{{ block.super }} : {{ request.user }}
+{% endblock %}
+
+{% block body %}
+<div class = "profile-card">
+    <h1>Профиль пользователя: {{request.user.username | upper}}</h1>
+    <div class = "profile-content">
+        <div id = "leftside">
+        <p>Фото:</p>
+        {% if request.user.photo %}
+        <img src ="{{request.user.photo.url}}" alt = "">
+        {% endif %}
+        </div>
+        <div id = "rightside">
+            <p>Ник: <b>{{request.user.username}}</b></p>
+            <p>Почта: {{request.user.email}}</p>
+            <p>Уровень доступа: <b>{{request.user.get_acess_level_display}}</b></p>
+            <p>Дата регистрации: {{request.user.date_joined|date:"j F Y H:i" }}</p>
+            <p>Последний вход: В {{request.user.last_login|date:"H:i j F Y"}}</p>
+            {% if request.user.is_superuser%}
+                <a href ="{% url 'admin:index' %}">Админ-Панель</a>
+            {% endif%}
+        </div>
+    </div>
+</div>
+{% endblock %}

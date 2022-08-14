@@ -66,6 +66,26 @@
 }
 
 
+/* private cost table */
+#private-cost {
+    background-color: var(--bots__list-bg);
+    border-radius: 20px;
+    display: block;
+    text-align: center;
+    padding: 15px;
+}
+
+#private-cost a {
+    color: #fff;
+    font-size: 20px;
+    font-family: Helvetica;
+    text-decoration: none;
+    opacity: .75;
+}
+#private-cost a:hover {
+    opacity: 1;
+}
+
 /* main content */
 
 .main_content {

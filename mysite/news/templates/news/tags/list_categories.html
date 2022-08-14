@@ -2,6 +2,7 @@
 <h1>Категории</h1>
 <div class="categories__list">
   <ul id="category_navbar">
+    <li class="categories__list__item"><a href="{% url 'news' %}" >Все</a></li>
   {% for item in categories %}
     <li class="categories__list__item"><a href="{{ item.get_absolute_url }}" >{{ item.title }}</a></li>
   {% endfor %}

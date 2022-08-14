@@ -22,11 +22,7 @@
         </nav>
         <div class = "authorization">
             {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser%}
-                  <a class = 'authorization__name' href ="{% url 'admin:index' %}">{{ user.username }}</a>
-                {% else %}
-                  <p class = 'authorization__name'>{{ user.username }}</p>
-                {% endif%}
+                <a class = "authorization__name" href = "{% url 'profile' %}">{{ user.username }}</a>
                 <a class = "authorization__link" href = "{% url 'logout' %}">Выйти</a>
             {% else %}
                 <a class = "authorization__link" href = "{% url 'login' %}">Войти</a>

@@ -19,7 +19,8 @@
         <a href = "{{ item.get_absolute_url }}" class = "">Подробнее</a>
       </div>
       <div class="news__card__footer">
-        {{ item.created_at|date:"H:i d.m.Y" }}
+        <p id = "category_title"><a href="{{ item.category.get_absolute_url }}">{{ item.category }} </a></p>
+        <p id = "created_date">{{ item.created_at|date:"H:i d.m.Y" }}</p>
       </div>
 </div>
   {% comment %} <div class="card">

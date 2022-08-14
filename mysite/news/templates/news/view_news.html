@@ -8,13 +8,14 @@
 <div class="news__card full">
     {% comment %} <a href = "{{ news_item.category.get_absolute_url }}">{{ news_item.category }} </a> {% endcomment %}
     <h5>{{ news_item.title }}</h5>
-    <p>{{ news_item.content|safe|linebreaks }}</p>
-    {% if item.photo %}
-        <img class="photo" src="{{ item.photo.url }}" alt = "">
+    {% if news_item.photo %}
+    <img class="photo" src="{{ news_item.photo.url }}" alt = "">
     {% endif %}
+    <p>{{ news_item.content|safe|linebreaks }}</p>
     <div class="news__card__footer">
-        {{ news_item.created_at|date:"H:i d.m.Y" }}
-    </div>
+        <p id = "category_title"><a href="{{ news_item.category.get_absolute_url }}">{{ news_item.category }} </a></p>
+        <p id = "created_date">{{ news_item.created_at|date:"H:i d.m.Y" }}</p>
+      </div>
 </div>
 
 {% endblock %}
