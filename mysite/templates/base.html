@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="{% static 'content/icons/favicon.ico' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'content/icons/favicon.ico' %}" type="image/x-icon">
+
+        <title>{% block title %} Главная {% endblock %}</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        {% block css_links %}{% endblock %}
+  </head>
+    <body>
+        {% include 'inc/_nav.html' %}
+
+        <div class = "content">
+            {% block body %}
+            {% endblock %}
+        </div>
+    <script src="{% static 'js/theme.js' %}">
+    </script>
+    </body>
+</html

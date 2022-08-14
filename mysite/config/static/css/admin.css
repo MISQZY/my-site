@@ -1,0 +1,18 @@
+:root {
+    --link-fg: #aaaaaa;
+    --breadcrumbs-bg: #222226;
+    --button-bg: #aaaaaa;
+    --button-fg: #000;
+    --button-hover-bg: #fff;
+    --object-tools-fg: #fff;
+    --link-hover-color: #f5dd5d;
+    --default-button-bg: #006b1b;
+    --default-button-hover-bg: #06b331;
+    --selected-row: #343438;
+    --breadcrumbs-fg: #fff;
+}
+
+#header,
+.module caption {
+    background-color: #222226;
+}

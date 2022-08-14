@@ -1,0 +1,20 @@
+{% extends 'base_news.html' %}
+
+{% block title %}
+  {{ block.super }}: {{ news_item.title }}
+{% endblock %}
+
+{% block content %}
+<div class="news__card full">
+    {% comment %} <a href = "{{ news_item.category.get_absolute_url }}">{{ news_item.category }} </a> {% endcomment %}
+    <h5>{{ news_item.title }}</h5>
+    <p>{{ news_item.content|safe|linebreaks }}</p>
+    {% if item.photo %}
+        <img class="photo" src="{{ item.photo.url }}" alt = "">
+    {% endif %}
+    <div class="news__card__footer">
+        {{ news_item.created_at|date:"H:i d.m.Y" }}
+    </div>
+</div>
+
+{% endblock %}

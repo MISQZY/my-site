@@ -1,0 +1,9 @@
+<div class="storage__categories" >
+    {% for item in categories %}
+      <div class="storage__category">
+            <h5>{{ item.title }}</h5>
+            <p>{{ item.content|safe|linebreaks|truncatewords:50 }}</p>
+            <a href="{{ item.get_absolute_url }}">Перейти</a>
+      </div>
+    {% endfor %}
+</div>

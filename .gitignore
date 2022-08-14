@@ -1,0 +1,10 @@
+Pipfile
+__pycache__/
+*.pyc
+db.sqlite3
+.local
+mysite/media/files/*
+mysite/media/photos/*
+mysite/static/
+venv/
+*migrations/

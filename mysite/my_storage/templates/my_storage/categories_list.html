@@ -1,0 +1,11 @@
+{% extends 'base_storage.html' %}
+{% load storage_tags %}
+
+{% block title %}
+    {{ block.super }}: Категории
+{% endblock %}
+
+
+{% block body %}
+{% show_list_categories %}
+{% endblock %}

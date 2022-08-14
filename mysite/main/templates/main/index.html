@@ -1,0 +1,17 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block title %} Главная {% endblock %}
+
+{% block body %}
+    <div class = 'main'>
+        <div class ='leftbar'>
+            <div class = 'leftbar__item'>
+                {% block bots_list %}{% include 'inc/_bots_list.html' %}{% endblock  %}
+            </div>
+        </div>
+        <div class = 'main_content'>
+            {% block content %} 123{% endblock %}
+        </div>
+    </div>
+{% endblock %}

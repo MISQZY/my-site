@@ -1,0 +1,26 @@
+{% extends 'base_storage.html' %}
+
+{% block title %}
+    {{ block.super }}: {{ card.title }}
+{% endblock %}
+
+{% block body %}
+<div class="storage__card__view">
+    <div class = "card__title">
+      <h5>{{ card.title }}</h5>
+    </div>
+    <div class = "card__container">
+      <div class = "file_content">
+            {{ file_content|safe|linebreaks }}
+      </div>
+      <div class="storage__incard__content">
+        <p>{{ card.content|safe|linebreaks }}</p>
+        <a href="{{ card.file.url }}" class='file-link' download="">Скачать файл</a>
+      </div>
+    </div>
+    <div class = "card__footer">
+      <p><small>Создано: {{ card.created_at }}</small></p>
+      <p><small>Последняя редакция: {{ card.updated_at }}</small></p>
+    </div>
+  </div>
+{% endblock %}

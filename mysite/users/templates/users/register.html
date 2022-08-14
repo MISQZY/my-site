@@ -1,0 +1,40 @@
+{% extends 'base_user.html' %}
+{% load static %}
+
+{% block title %}
+{{ block.super }}: Регистрация
+{% endblock %}
+
+{% block css_links %}
+<link href="{% static 'css/auth_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% block alert %}
+        {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <div class="alert alert-danger" role="alert">
+                    <p>{{ message }}</p>
+                </div>
+            {% else %}
+                <div class="alert alert-{{ message.tags }}" role="alert">
+                    <p>{{ message }}</p>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+        {% endif %}
+{% endblock %}
+    <div class = "form">
+            <h1>Регистрация</h1>
+        <div class = "form__item">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="form__button">Зарегестрироваться</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

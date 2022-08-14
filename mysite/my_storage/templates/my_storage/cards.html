@@ -1,0 +1,36 @@
+{% extends 'base_storage.html' %}
+{% comment %} {% load storage_tags %} {% endcomment %}
+
+{% block title %}
+    {{ block.super }}: {{ category.title }}
+{% endblock %}
+
+
+{% block body %}
+{% comment %} {% show_list_cards %} {% endcomment %}
+<div class = "storage__cards">
+  <div class = "storage__card__category">
+    <h5> Список работ по предмету: {{ category.title }}</h5>
+  </div>
+  <div class = "storage__card__content">
+      {% for item in cards %}
+
+        <div class="storage__card">
+          <h5>{{ item.title }}</h5>
+          <p>{{ item.content|safe|linebreaks|truncatewords:20 }}</p>
+          {% if request.user.acess_level >= item.acess_required %}
+          <a href="{{ item.get_absolute_url }}">Перейти</a>
+          {% else %}
+          <p class = "not-accessed-text">У вас нету доступа</p>
+          {% endif %}
+        </div>
+
+      {% endfor %}
+      <div class ='more-content-text'>
+        <p>Для большего количества контента приобретите приватный доступ</p>
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}
