@@ -16,6 +16,7 @@
         {% endif %}
         </div>
         <div id = "rightside">
+            {% block rightside %}
             <p>Ник: <b>{{request.user.username}}</b></p>
             <p>Почта: {{request.user.email}}</p>
             <p>Уровень доступа: <b>{{request.user.get_acess_level_display}}</b></p>
@@ -24,6 +25,7 @@
             {% if request.user.is_superuser%}
                 <a href ="{% url 'admin:index' %}">Админ-Панель</a>
             {% endif%}
+            {% endblock%}
         </div>
     </div>
 </div>
